@@ -25,11 +25,8 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
-    "phantomjs": "~1.9.0"
+    "phantomjs-prebuilt": "~2.1.14"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
