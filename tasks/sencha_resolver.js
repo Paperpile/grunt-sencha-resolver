@@ -58,8 +58,13 @@ module.exports = function(grunt) {
       done();
     }
 
-    grunt.log.write("Spawning PhantomJS and capturing Ext.Loader info...\n");
-    var t = grunt.util.spawn(spawn_options, doneFunction);
+    if (!options.fileList) {
+      grunt.log.write("Spawning PhantomJS and capturing Ext.Loader info...\n");
+      var t = grunt.util.spawn(spawn_options, doneFunction);
+    } else {
+      grunt.log.write("Using pre-defined list of files...\n");
+      doneFunction(null, {stdout:options.fileList.join('\n')}, null);
+    }
   });
 
 };
